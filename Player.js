@@ -1,32 +1,15 @@
-export default class Player {
+import Square from './Square.js';
+
+export default class Player extends Square {
   constructor(x, y, c = 'green', w = 20, h = 20) {
-    this.x = x;
-    this.y = y;
-    this._w = w;
-    this._h = h;
-    this._c = c;
+    super(x, y, c, w, h);
+
     this.movement = { UP: false, DOWN: false, LEFT: false, RIGHT: false }
     this.vx = 0;
     this.vy = 0;
-    this.acceleration = 1;
+    this.acceleration = 0.7;
   }
 
-  get c() {
-    return this._c;
-  }
-
-  get w() {
-    return this._w;
-  }
-
-  get h() {
-    return this._h;
-  }
-
-  draw(ctx) {
-    ctx.fillStyle = this.c;
-    ctx.fillRect(this.x, this.y, this.w, this.h)
-  }
 
   update(width, height) {
     if (this.movement.UP && !this.movement.DOWN) this.vy -= this.acceleration;
