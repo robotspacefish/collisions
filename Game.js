@@ -38,7 +38,8 @@ export default class Game {
 
   draw() {
     this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
-    this.player.draw(this.ctx, this.width, this.height);
+    Square.all.forEach(s => s.draw(this.ctx));
+
   }
 
   update() {
