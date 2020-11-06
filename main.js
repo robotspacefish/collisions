@@ -18,6 +18,8 @@ function keyHandler(e) {
 
 window.addEventListener('load', () => {
   game = new Game(document.getElementById('canvas').getContext('2d'));
+
+  Game.createObstacle.call(game, 100, 50);
 }, false);
 
 window.addEventListener('resize', () => {

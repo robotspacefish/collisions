@@ -1,9 +1,11 @@
 import Player from './Player.js';
+import Square from './Square.js';
 
 export default class Game {
   constructor(ctx, width = 800, height = 600) {
     this._ctx = ctx;
     this.player = new Player(10, 10, 'black', 50, 50);
+    this.obstacles = [];
     this.RAF;
 
     // logical
@@ -18,6 +20,10 @@ export default class Game {
 
     this.resize();
     this.loop();
+  }
+
+  static createObstacle(x, y) {
+    this.obstacles.push(new Square(x, y));
   }
 
   get ctx() {
