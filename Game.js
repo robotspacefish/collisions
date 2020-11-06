@@ -3,7 +3,7 @@ import Player from './Player.js';
 export default class Game {
   constructor(ctx, width = 800, height = 600) {
     this._ctx = ctx;
-    this.player = new Player(10, 10);
+    this.player = new Player(10, 10, 'black', 50, 50);
     this.RAF;
 
     // logical
@@ -25,7 +25,6 @@ export default class Game {
   }
 
   loop() {
-    console.log('looping')
     this.draw();
     this.update();
     this.RAF = requestAnimationFrame(this.loop.bind(this));
