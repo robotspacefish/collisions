@@ -1,10 +1,14 @@
 export default class Square {
-  constructor(x, y, c, w = 20, h = 20) {
+  static all = [];
+
+  constructor(x, y, c = 'red', w = 50, h = 50) {
     this.x = x;
     this.y = y;
     this._c = c;
     this._w = w;
     this._h = h;
+
+    Square.all.push(this);
   }
 
   get c() {
