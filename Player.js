@@ -1,13 +1,12 @@
-import Square from './Square.js';
+import Entity from './Entity.js';
 
-export default class Player extends Square {
-  constructor(x, y, c = 'green', w = 20, h = 20) {
-    super(x, y, c, w, h);
-
+export default class Player extends Entity {
+  constructor(x, y) {
+    super(x, y, 14, 16);
     this.movement = { UP: false, DOWN: false, LEFT: false, RIGHT: false }
     this.vx = 0;
     this.vy = 0;
-    this.acceleration = 0.7;
+    this.acceleration = 1;
   }
 
 
@@ -24,11 +23,12 @@ export default class Player extends Square {
     this.y = Math.max(0, Math.min(this.y + this.vy, height - this.h));
   }
 
-  draw(ctx) {
-    super.draw(ctx);
-    ctx.fillStyle = 'white';
-    ctx.font = '12px sans-serif'
-    ctx.fillText('Player', this.x + 8, this.y + this.h / 2);
-  }
+  // draw(ctx) {
+  //   // super.draw(ctx);
+  //   // ctx.fillStyle = 'white';
+  //   // ctx.font = '12px sans-serif'
+  //   // ctx.fillText('Player', this.x + 8, this.y + this.h / 2);
+
+  // }
 
 }
