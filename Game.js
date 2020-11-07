@@ -2,7 +2,7 @@ import Player from './Player.js';
 import Entity from './Entity.js';
 
 export default class Game {
-  constructor(ctx, width = 800, height = 600) {
+  constructor(ctx, width = 128, height = 128) {
     this._ctx = ctx;
     this.obstacles = [];
     this.RAF;
