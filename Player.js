@@ -6,7 +6,7 @@ export default class Player extends Entity {
     this.movement = { UP: false, DOWN: false, LEFT: false, RIGHT: false }
     this.vx = 0;
     this.vy = 0;
-    this.acceleration = 1;
+    this.acceleration = 0.2;
   }
 
 
@@ -19,8 +19,8 @@ export default class Player extends Entity {
     if (!this.movement.LEFT && !this.movement.RIGHT) this.vx = 0;
 
     // move
-    this.x = Math.max(0, Math.min(this.x + this.vx, width - this.w));
-    this.y = Math.max(0, Math.min(this.y + this.vy, height - this.h));
+    this.x = Math.floor(Math.max(0, Math.min(this.x + this.vx, width - this.w)));
+    this.y = Math.floor(Math.max(0, Math.min(this.y + this.vy, height - this.h)));
   }
 
   // draw(ctx) {
