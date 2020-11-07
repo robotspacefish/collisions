@@ -17,14 +17,18 @@ export default class Game {
     this.ctx.canvas.width = this.width;
     this.ctx.canvas.height = this.height;
 
-    this.player = new Player(100, this.height - 100);
+    this.player;
 
     this.resize();
     this.loop();
   }
 
-  static createObstacle(x, y, w, h, spritePath) {
-    this.obstacles.push(new Entity(x, y, w, h, spritePath));
+  static createPlayer() {
+    this.player = new Player(100, this.height - 100);
+  }
+
+  static createObstacle(x, y, w, h, spritePath, shape, c) {
+    this.obstacles.push(new Entity(x, y, w, h, spritePath, shape, c));
   }
 
   get ctx() {
@@ -44,7 +48,7 @@ export default class Game {
   }
 
   update() {
-    this.player.update(this.width, this.height);
+    if (this.player) this.player.update(this.width, this.height);
   }
 
   resize() {

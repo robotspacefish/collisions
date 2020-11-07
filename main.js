@@ -21,11 +21,14 @@ window.addEventListener('load', () => {
   game.resize();
 
   // donut (circle object)
-  Game.createObstacle.call(game, 40, game.height / 2 - 5, 10, 10, './images/donut.png');
+  Game.createObstacle.call(game, 40, game.height / 2 - 5, 10, 10, './images/donut.png', 'circle', 'orange');
 
   // alien (rectangle object)
-  Game.createObstacle.call(game, game.width - 40, game.height / 2, 16, 15, './images/alien.png');
+  Game.createObstacle.call(game, game.width - 40, game.height / 2, 16, 15, './images/alien.png', 'rectangle', 'yellow');
+
+  Game.createPlayer.call(game);
 }, false);
+
 
 window.addEventListener('resize', () => {
   game.resize();
