@@ -1,10 +1,9 @@
 import Player from './Player.js';
-import Square from './Square.js';
+import Entity from './Entity.js';
 
 export default class Game {
   constructor(ctx, width = 800, height = 600) {
     this._ctx = ctx;
-    this.player = new Player(10, 10, 'black', 50, 50);
     this.obstacles = [];
     this.RAF;
 
@@ -17,6 +16,8 @@ export default class Game {
     // visual
     this.ctx.canvas.width = this.width;
     this.ctx.canvas.height = this.height;
+
+    this.player = new Player(100, this.height - 100);
 
     this.resize();
     this.loop();

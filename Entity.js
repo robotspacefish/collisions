@@ -1,13 +1,13 @@
 export default class Entity {
   static all = [];
 
-  constructor(x, y, w, h) {
+  constructor(x, y, w, h, spritePath) {
     this.x = x;
     this.y = y;
     this._w = w;
     this._h = h;
     this.image = new Image();
-    this.image.src = './images/robot.png';
+    this.image.src = spritePath;
     Entity.all.push(this);
   }
 

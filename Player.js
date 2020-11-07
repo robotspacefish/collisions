@@ -2,7 +2,7 @@ import Entity from './Entity.js';
 
 export default class Player extends Entity {
   constructor(x, y) {
-    super(x, y, 14, 16);
+    super(x, y, 14, 16, './images/robot.png');
     this.movement = { UP: false, DOWN: false, LEFT: false, RIGHT: false }
     this.vx = 0;
     this.vy = 0;
