@@ -23,8 +23,8 @@ export default class Game {
     this.loop();
   }
 
-  static createObstacle(x, y) {
-    this.obstacles.push(new Square(x, y));
+  static createObstacle(x, y, w, h, spritePath) {
+    this.obstacles.push(new Entity(x, y, w, h, spritePath));
   }
 
   get ctx() {
@@ -39,7 +39,7 @@ export default class Game {
 
   draw() {
     this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height);
-    Square.all.forEach(s => s.draw(this.ctx));
+    Entity.all.forEach(s => s.draw(this.ctx));
 
   }
 
