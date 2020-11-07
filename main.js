@@ -18,8 +18,13 @@ function keyHandler(e) {
 
 window.addEventListener('load', () => {
   game = new Game(document.getElementById('canvas').getContext('2d'));
+  game.resize();
 
-  Game.createObstacle.call(game, game.width / 2 - 25, game.height / 2 - 25);
+  // donut (circle object)
+  Game.createObstacle.call(game, 40, game.height / 2 - 5, 10, 10, './images/donut.png');
+
+  // alien (rectangle object)
+  Game.createObstacle.call(game, game.width - 40, game.height / 2, 16, 15, './images/alien.png');
 }, false);
 
 window.addEventListener('resize', () => {
