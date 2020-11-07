@@ -24,4 +24,11 @@ export default class Player extends Square {
     this.y = Math.max(0, Math.min(this.y + this.vy, height - this.h));
   }
 
+  draw(ctx) {
+    super.draw(ctx);
+    ctx.fillStyle = 'white';
+    ctx.font = '12px sans-serif'
+    ctx.fillText('Player', this.x + 8, this.y + this.h / 2);
+  }
+
 }
