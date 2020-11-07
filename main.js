@@ -19,7 +19,7 @@ function keyHandler(e) {
 window.addEventListener('load', () => {
   game = new Game(document.getElementById('canvas').getContext('2d'));
 
-  Game.createObstacle.call(game, 100, 50);
+  Game.createObstacle.call(game, game.width / 2 - 25, game.height / 2 - 25);
 }, false);
 
 window.addEventListener('resize', () => {
